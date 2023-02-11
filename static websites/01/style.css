@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 10px;
+    position: relative;
+}
+
+body {
+    width: 450px;
+    height: 350px;
+    border: 1px solid black
+}
+
+.header {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 20px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 450px;
+    text-align: center;
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+}
+
+.main {
+    margin: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+
+}
+
+.nav-items > li {
+    padding: 10px;
+}
