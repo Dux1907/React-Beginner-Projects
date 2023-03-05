@@ -1,21 +1,17 @@
 import styles from './index.css'
-
+import Img from './Img'
 const style = {
   width: '18rem',
   display: 'inline-block',
   margin:'1rem',
   border : '1px solid black',
   padding: '5px',
-  height:'27rem'
+  height:'37rem'
 }
 const linkstyle = {
   textDecoration : 'none',
   display: 'block',
  margin:'auto'
-}
-const imgstyle = {
-  width:'100%',
-  height:'60%',
 }
 const center = {
   textAlign:'center',
@@ -25,7 +21,9 @@ function Card(props){
   return (
     <>
     <div className="card" style = {style}>
-  <img style = {imgstyle} src={props.imgsrc} className="card-img-top" alt="..." />
+    <Img 
+      imgsrc = {props.imgsrc} 
+    />
   <div className="card-body">
     <h2 style = {center} className="card-title">{props.title}</h2>
     <p style = {center} className="card-text">{props.content}</p>
