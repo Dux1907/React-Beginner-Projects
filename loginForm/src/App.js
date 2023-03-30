@@ -1,29 +1,32 @@
-import React,{useState} from 'react';
-import './App.css';
-
-
-const App = () => {
-  
-  const [heading, newHeading] = useState('')
-  const [initial, final] = useState();
-  const hg = (event) =>{
-    newHeading(event.target.value)
+import React,{ useState } from "react";
+import './index.css'
+export default function App() {
+  const [initial,final] = useState();
+  const [heading, newhg] = useState();
+  const [last, lastNew] = useState();
+  const [full, fullNew] = useState();
+  const change = (e) => {
+    final(e.target.value)
   }
-  const set = () => {
-    final(heading)
+  const changeOne = (e) => {
+    lastNew(e.target.value)
   }
-  return (
+  const set = (event) => {
+    event.preventDefault()  // to prevent of refeshing the page as when the submit button is clicked in a form,the page is refreshed immediately and automatically.
+    newhg(initial)
+    fullNew(last)
+    final('')
+    lastNew('')
+  }
+  return(
     <>
-      <div>
-        <h3>Hello {initial} </h3>
-      <div class="input-group flex-nowrap">
-  <span class="input-group-text" id="addon-wrapping">@</span>
-          <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" value={heading} onChange={hg} />
-        </div>
-        <button onClick={set} style={{ display: 'block', margin:'10px',borderRadius:'5px'}}>Click here to submit</button>
-        </div>
+      <h2 className='mb-3'>Hello {heading} {full} </h2>
+      <form>
+      <input id='input' type='text' placeholder='Enter your first name' value={initial} onChange={change} />
+      <input id='input' type='text' placeholder='Enter your last name' value={last} onChange={changeOne} />
+      <br/>
+        <button onClick={set} type='submit' className="btn btn-primary mt-3">Click to submit</button>
+        </form>
     </>
-  )
-}
-
-export default App;
+  );
+};
